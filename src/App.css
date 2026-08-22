@@ -107,16 +107,29 @@ body {
   pointer-events: none;
 }
 .sister-word {
-  position: absolute; color: #c40000; font-weight: 900;
+  position: absolute;
+  color: #c40000;
+  font-weight: 500;
   font-family: "Kaiti", "STKaiti", serif;
-  opacity: 0; animation: sisterPop 1s ease-out forwards;
-  text-shadow: 0 0 18px rgba(200,0,0,0.8);
+  opacity: 0;
+  animation: sisterPop 1s ease-out forwards;
+  text-shadow: 0 0 14px rgba(200,0,0,0.7);
 }
 @keyframes sisterPop {
   0% { opacity: 0; transform: scale(0.2); }
-  40% { opacity: 1; transform: scale(1.1); }
+  40% { opacity: 1; transform: scale(1.05); }
   100% { opacity: 1; transform: scale(1); }
 }
+.fx-sister {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(0,0,0,0.9);
+  pointer-events: none;
+  animation: sisterFade 1s ease-in 3.5s forwards;
+}
+@keyframes sisterFade {
+  to { opacity: 0; }
+}
+
 
 /* 拜堂哭求 */
 .fx-cry {
@@ -197,6 +210,13 @@ body {
 @keyframes choiceIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .choice:hover { background: rgba(139, 0, 0, 0.25); transform: translateX(4px); }
 .bg-light .choice:hover { background: rgba(139, 0, 0, 0.1); }
+.next-btn {
+  text-align: center;
+  opacity: 1;
+  animation: none;
+  color: inherit;
+  border-style: dashed;
+}
 
 .hint {
   position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
