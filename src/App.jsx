@@ -559,7 +559,7 @@ export default function App() {
 
       {effect === 'img_face' && (
         <div className="fx-img img-face">
-          <img src="/images/face.jpg" alt="" />
+          <img src="/images/face.jpeg" alt="" />
         </div>
       )}
       {effect === 'img_bridal' && (
