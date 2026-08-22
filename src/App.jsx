@@ -201,28 +201,87 @@ export default function App() {
   const effectClass = effect ? `fx-${effect}` : ''
   const bgClass = `bg-${bg}`
 
-  return (
-    <div className={`game ${bgClass} ${effectClass}`}>
-      {effect === 'image_lantern' && (
-        <div className="fx-image image-lantern">
-          <div className="lantern">🏮</div>
-          <div className="lantern-glow"></div>
-        </div>
-      )}
-      {effect === 'image_paper' && (
-        <div className="fx-image image-paper">
-          <div className="paper-man">☯</div>
-          <span className="paper-label">纸人</span>
-        </div>
-      )}
-      {effect === 'image_face' && (
-        <div className="fx-image image-face">
-          <div className="paper-face">🎭</div>
-        </div>
-      )}
-      {effect === 'flash' && <div className="fx-flash"></div>}
-      {effect === 'flash_red' && <div className="fx-flash-red"></div>}
-      {effect === 'shake' && <div className="fx-shake"></div>}
+ {effect === 'flash' && <div className="fx-flash"></div>}
+{effect === 'flash_red' && <div className="fx-flash-red"></div>}
+{effect === 'shake' && <div className="fx-shake"></div>}
+
+{/* 妹妹突脸图：全屏快速弹出 */}
+{effect === 'img_face' && (
+  <div className="fx-img img-face">
+    < img src="https://s41.ax1x.com/2026/08/22/pmz4ui4.jpg" alt="" />
+  </div>
+)}
+
+{/* 红嫁衣女人：梦里旧房子，缓慢浮现 */}
+{effect === 'img_bridal' && (
+  <div className="fx-img img-bridal">
+    < img src="https://s41.ax1x.com/2026/08/22/pmz4dWd.png" alt="" />
+  </div>
+)}
+
+{/* 血手印：杂乱铺满屏幕 */}
+{effect === 'img_blood' && (
+  <div className="fx-blood">
+    {[...Array(10)].map((_, i) => (
+      <img
+        key={i}
+        src="https://s41.ax1x.com/2026/08/22/pmz4QzR.png"
+        alt=""
+        className="blood-print"
+        style={{
+          left: `${5 + Math.random() * 80}%`,
+          top: `${5 + Math.random() * 80}%`,
+          width: `${60 + Math.random() * 160}px`,
+          transform: `rotate(${Math.random() * 360 - 180}deg)`,
+          animationDelay: `${Math.random() * 1.5}s`
+        }}
+      />
+    ))}
+  </div>
+)}
+
+{/* 红色"姐姐"弹屏：由小到大铺满全屏 */}
+{effect === 'sister_pop' && (
+  <div className="fx-sister">
+    {[...Array(26)].map((_, i) => (
+      <span
+        key={i}
+        className="sister-word"
+        style={{
+          left: `${Math.random() * 88}%`,
+          top: `${Math.random() * 88}%`,
+          fontSize: `${24 + Math.random() * 72}px`,
+          animationDelay: `${Math.random() * 1.2}s`,
+          transform: `rotate(${Math.random() * 30 - 15}deg)`
+        }}
+      >姐姐</span>
+    ))}
+  </div>
+)}
+
+{/* 拜堂哭求：红字抖动逐行 */}
+{effect === 'cry_text' && (
+  <div className="fx-cry">
+    {[
+      '我不要嫁……我不要嫁给他……',
+      '娘，你放过我……我是你女儿啊……',
+      '姐姐……姐姐你在哪……你说过会回来的……',
+      '救我……谁来救救我……',
+      '为什么……为什么是我……',
+      '姐姐，你骗我。'
+    ].map((line, i) => (
+      <p key={i} className="cry-line" style={{ animationDelay: `${i * 0.9}s` }}>{line}</p >
+    ))}
+  </div>
+)}
+
+{/* 抖动文字：比如"别回头。" */}
+{effect === 'shake_text' && (
+  <div className="fx-shake-text">
+    <span>别回头。</span>
+  </div>
+)}
+
 
       <div className="game-content">
         <div className="title">{node.ending ? (node.good ? '🌅 结局' : '☠️ 结局') : '巷子尽头的红灯笼'}</div>
