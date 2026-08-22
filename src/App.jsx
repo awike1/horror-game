@@ -94,7 +94,7 @@ const STORY = {
     m11: {
       bg: 'black',
       effect: 'shake_text',
-      text: '你盯着那张脸，浑身发冷。\n\n照片里的女孩，嘴角的弧度越来越大，越来越大——\n\n然后，她缓缓抬起手，指向你身后。\n\n你僵硬地回过头。',
+      text: '你盯着那张脸，浑身发冷。\n\n照片里的女孩，嘴角的弧度越来越大——\n\n她缓缓抬起手，指向你身后。\n\n你僵硬地回过头。',
       choices: [
         { text: '（回过头去）', to: 'end_small' }
       ]
@@ -182,13 +182,20 @@ const STORY = {
       fragment: 2,
       text: '换好衣服和头发，姐姐拉着你往外跑。\n\n「我们去哪儿？」你问。\n\n「离开这个村子。」她说。\n\n你们趁着夜色往村口跑。可刚跑出村口，就被几个大人围住了——\n\n是你们爹娘喊来的。\n\n你们被按倒，绑了起来，关进柴房。',
       choices: [
-        { text: '（获得记忆碎片·二）被关进柴房', to: 'v3' }
+        { text: '（获得记忆碎片·二）被关进柴房', to: 'v2b' }
+      ]
+    },
+    v2b: {
+      bg: 'dark',
+      text: '柴房里又黑又冷，只有墙角一扇漏风的小窗透进一点光。\n\n你和姐姐被绑在两边，谁也没说话。\n\n一天，两天。娘会来送饭，但一句话都不说，放下碗就走。\n\n你听见外面有人在说话，说村长家在张罗冥婚，说要挑个好日子，说要给死去的儿子办个像样的阴亲。\n\n日子一天天过去，你心里越来越慌。\n\n你偷偷问姐姐：「我们会怎样？」\n\n姐姐没有回答，只是盯着那扇门，眼睛红红的。',
+      choices: [
+        { text: '（等待）', to: 'v3' }
       ]
     },
     v3: {
       bg: 'dark',
       fragment: 3,
-      text: '柴房里又黑又冷。你听见外面有人说话，说村长家的儿子要配冥婚，说今晚就要把人接走。\n\n你怕极了，缩在角落里。姐姐被绑在另一边，一直盯着你看。\n\n门开了。\n\n爹娘走进来，一把抓住你——抓住披着头发的你——往外拖。\n\n你回头看姐姐，她拼命挣扎，却挣不开绳子。\n\n你不明白。你们不是换了衣服和头发吗？为什么被带走的还是你？\n\n你忽然想通了——姐姐跟你换衣服，是为了让她自己不被带走吧。\n\n她骗了你。',
+      text: '第五天，天还没亮，柴房的门开了。\n\n爹娘走进来，一把抓住你——抓住披着头发的你——往外拖。\n\n你回头看姐姐，她拼命挣扎，却挣不开绳子。\n\n你不明白。你们不是换了衣服和头发吗？为什么被带走的还是你？\n\n你忽然想通了——姐姐跟你换衣服，是为了让她自己不被带走吧。\n\n她骗了你。',
       choices: [
         { text: '（获得记忆碎片·三）被拖走', to: 'v4' }
       ]
@@ -265,35 +272,33 @@ const STORY = {
     },
     end_small: {
       bg: 'black',
-      text: '你回过头——\n\n身后什么都没有。\n\n可那天之后，你总觉得有什么东西跟着你。你搬了家，换了号码。\n\n手机里那张照片还在，只是照片里的女孩，一天比一天离得更近。\n\n🏁 结局【小命更重要】',
+      text: '达成结局【小命更重要】',
       ending: true
     },
     end_believe: {
       bg: 'black',
-      text: '第二天醒来，阳光正好，一切正常。\n\n你笑着想，果然是自己吓自己。\n\n你掀开被子下床——\n\n脚踝上，一圈青紫的指印，像是被谁攥了一整夜。\n\n🏁 结局【宁可信其有 不可信其无】',
+      text: '达成结局【宁可信其有 不可信其无】',
       ending: true
     },
     end_experience: {
       bg: 'black',
-      text: '你被按着拜完了堂。\n\n红盖头落下来的一瞬，你看见床头坐着一个穿寿衣的男孩，正朝你笑。\n\n从那以后，村里人都说，老宅里多了两个孩子的哭声。\n\n🏁 结局【亲身体验】',
+      text: '达成结局【亲身体验】',
       ending: true
     },
     end_good: {
       bg: 'light',
-      text: '你走过去，握住了妹妹冰凉的手。\n\n她抬起头，眼泪顺着惨白的脸往下淌：「姐姐……」\n\n「对不起。」你说，「姐姐来晚了。」\n\n这一次，你没有放手。\n\n你们一起，在晨光里化作了点点光尘，飘散了。\n\n第二天，巷口的那盏红灯笼，不见了。\n\n你，再也没有梦见过她。\n\n🏁 结局【魂飞魄散】',
+      text: '你走过去，握住了妹妹冰凉的手。\n\n她抬起头，眼泪顺着惨白的脸往下淌：「姐姐……」\n\n「对不起。」你说，「姐姐来晚了。」\n\n这一次，你没有放手。\n\n你们一起，在晨光里化作了点点光尘，飘散了。\n\n第二天，巷口的那盏红灯笼，不见了。\n\n你，再也没有梦见过她。\n\n🏁 达成结局【魂飞魄散】',
       ending: true,
       good: true
     },
     end_bad_empty: {
       bg: 'black',
-      effect: 'flash_red',
-      text: '你终究，还是不忍心下手。\n\n她的手缩了回去。你眼前一黑，倒了下去。\n\n再次睁开眼，天已大亮。你躺在床上，头痛欲裂，庆幸那只是一场梦。\n\n你下床，想去倒杯水。\n\n脚脖子，突然被一只手攥住了。\n\n你僵硬地低头——\n\n床底的阴影里，露出半张惨白的脸，正仰头看着你。\n\n她笑了：\n\n「姐姐，这么容易相信别人，是会吃亏的。」\n\n「……来陪我吧。」\n\n🏁 结局【床底贴脸】',
+      text: '你终究，还是不忍心下手。\n\n她的手缩了回去。你眼前一黑，倒了下去。\n\n再次睁开眼，天已大亮。你躺在床上，头痛欲裂，庆幸那只是一场梦。\n\n你下床，想去倒杯水。\n\n脚脖子，突然被一只手攥住了。\n\n你僵硬地低头——\n\n床底的阴影里，露出半张惨白的脸，正仰头看着你。\n\n她笑了：\n\n「姐姐，这么容易相信别人，是会吃亏的。」\n\n「……来陪我吧。」\n\n🏁 达成结局【床底贴脸】',
       ending: true
     },
     end_bad_full: {
       bg: 'black',
-      effect: 'flash_red',
-      text: '你终究，还是不忍心下手。\n\n她的手缩了回去。你眼前一黑，倒了下去。\n\n再次睁开眼，天已大亮。你躺在床上，头痛欲裂，庆幸那只是一场梦。\n\n你下床，想去倒杯水。\n\n脚脖子，突然被一只手攥住了。\n\n你僵硬地低头——\n\n床底的阴影里，露出半张惨白的脸，正仰头看着你。\n\n她的眼睛，忽然红了：\n\n「姐姐，你还是那么心善。」\n\n「……来陪我吧。」\n\n🏁 结局【床底贴脸】',
+      text: '你终究，还是不忍心下手。\n\n她的手缩了回去。你眼前一黑，倒了下去。\n\n再次睁开眼，天已大亮。你躺在床上，头痛欲裂，庆幸那只是一场梦。\n\n你下床，想去倒杯水。\n\n脚脖子，突然被一只手攥住了。\n\n你僵硬地低头——\n\n床底的阴影里，露出半张惨白的脸，正仰头看着你。\n\n她的眼睛，忽然红了：\n\n「姐姐，你还是那么心善。」\n\n「……来陪我吧。」\n\n🏁 达成结局【床底贴脸】',
       ending: true
     }
   }
@@ -389,6 +394,7 @@ const SoundFX = {
 export default function App() {
   const [boot, setBoot] = useState(() => localStorage.getItem('horror_save') ? 'menu' : 'play')
   const [nodeId, setNodeId] = useState(STORY.start)
+  const [page, setPage] = useState(0)
   const [fragments, setFragments] = useState(() => {
     try { return JSON.parse(localStorage.getItem('horror_frags')) || [] } catch (e) { return [] }
   })
@@ -401,6 +407,16 @@ export default function App() {
 
   const node = STORY.nodes[nodeId]
   const hasAll = [0, 1, 2, 3, 4, 5].every(f => fragments.includes(f))
+
+  // 终章集齐碎片时追加真相
+  const fullText = nodeId === 'v_final' && hasAll ? (node ? node.text + TRUTH_TEXT : '') : (node ? node.text : '')
+
+  // 分页：每页3行
+  const PER_PAGE = 3
+  const lines = fullText.split('\n')
+  const totalPages = Math.max(1, Math.ceil(lines.length / PER_PAGE))
+  const pageLines = lines.slice(page * PER_PAGE, (page + 1) * PER_PAGE).join('\n')
+  const isLastPage = page >= totalPages - 1
 
   // 收集碎片
   useEffect(() => {
@@ -420,44 +436,47 @@ export default function App() {
     }
   }, [nodeId, boot])
 
-  // 打字机 + 特效 + 音效
+  // 打字机 + 特效 + 音效（切节点重置分页）
   useEffect(() => {
     if (!node) return
+    setPage(0)
     setTyping(true)
     setChoicesVisible(false)
     setBg(node.bg || 'light')
     setEffect(node.effect || '')
 
-    // 音效
     if (node.sound === 'heartbeat') SoundFX.heartbeat()
     if (node.sound === 'jump') SoundFX.jump()
     if (node.sound === 'drone') SoundFX.drone()
     if (node.sound === 'stop') SoundFX.stopDrone()
 
-    // 终章集齐碎片时追加真相
-    const fullText = nodeId === 'v_final' && hasAll ? node.text + TRUTH_TEXT : node.text
-
     if (node.ending) {
-      setShown(fullText)
+      setShown(node.text)
       setTyping(false)
-      setTimeout(() => setChoicesVisible(true), 400)
+      setTimeout(() => setChoicesVisible(true), 300)
       return
     }
+  }, [nodeId])
 
+  // 每页打字
+  useEffect(() => {
+    if (!node || node.ending) return
+    setTyping(true)
+    setChoicesVisible(false)
     setShown('')
     let i = 0
     clearInterval(timerRef.current)
     timerRef.current = setInterval(() => {
       i += 2
-      setShown(fullText.slice(0, i))
-      if (i >= fullText.length) {
+      setShown(pageLines.slice(0, i))
+      if (i >= pageLines.length) {
         clearInterval(timerRef.current)
         setTyping(false)
-        setTimeout(() => setChoicesVisible(true), node.effect ? 1200 : 400)
+        setTimeout(() => setChoicesVisible(true), 300)
       }
-    }, 30)
+    }, 25)
     return () => clearInterval(timerRef.current)
-  }, [nodeId])
+  }, [nodeId, page])
 
   // 终章动态选项
   function currentChoices() {
@@ -500,6 +519,10 @@ export default function App() {
     setBoot('play')
   }
 
+  function nextPage() {
+    setPage(p => p + 1)
+  }
+
   // 开始菜单
   if (boot === 'menu') {
     return (
@@ -536,12 +559,12 @@ export default function App() {
 
       {effect === 'img_face' && (
         <div className="fx-img img-face">
-          <img src="https://s41.ax1x.com/2026/08/22/pmz4ui4.jpg" alt="" />
+          <img src="/images/face.jpg" alt="" />
         </div>
       )}
       {effect === 'img_bridal' && (
         <div className="fx-img img-bridal">
-          <img src="https://s41.ax1x.com/2026/08/22/pmz4dWd.png" alt="" />
+          <img src="/images/bridal.png" alt="" />
         </div>
       )}
       {effect === 'img_blood' && (
@@ -549,7 +572,7 @@ export default function App() {
           {[...Array(10)].map((_, i) => (
             <img
               key={i}
-              src="https://s41.ax1x.com/2026/08/22/pmz4QzR.png"
+              src="/images/blood.png"
               alt=""
               className="blood-print"
               style={{
@@ -572,7 +595,7 @@ export default function App() {
               style={{
                 left: `${Math.random() * 88}%`,
                 top: `${Math.random() * 88}%`,
-                fontSize: `${24 + Math.random() * 72}px`,
+                fontSize: `${16 + Math.random() * 40}px`,
                 animationDelay: `${Math.random() * 1.2}s`,
                 transform: `rotate(${Math.random() * 30 - 15}deg)`
               }}
@@ -613,17 +636,23 @@ export default function App() {
         <div className="text">{shown}{typing && <span className="cursor">▍</span>}</div>
 
         {choicesVisible && !typing && (
-          <div className="choices">
-            {node.ending ? (
+          node.ending ? (
+            <div className="choices">
               <button className="choice" onClick={backToMenu}>回到开始</button>
-            ) : (
-              currentChoices().map((c, i) => (
+            </div>
+          ) : isLastPage ? (
+            <div className="choices">
+              {currentChoices().map((c, i) => (
                 <button key={i} className="choice" onClick={() => goTo(c.to)}>
                   {c.text}
                 </button>
-              ))
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="choices">
+              <button className="choice next-btn" onClick={nextPage}>继续</button>
+            </div>
+          )
         )}
       </div>
 
